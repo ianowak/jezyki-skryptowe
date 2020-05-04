@@ -1,0 +1,24 @@
+#PierwszyObszarBoczny {width:200px; height:300px; float:left; background-color:red}
+#ObszarRoboczy { height:300px; background-color: lightgreen;}
+#DrugiObszarBoczny {width:200px; height:300px; float:right; background-color:lightyellow}
+#Menu {background-color: blue;}
+#ObszarLogowania {clear: left; text-align: right; background-color: purple;}
+#Strona {background-color: lightgray;}
+
+
+.option
+{
+float: left;
+min-width:50px;
+height:25px;
+font-size:18px;
+padding:10px;
+border-right:2px dotted #4444444;
+opacity:0.8;
+}
+
+.option:hover
+{
+background-color: #000000;
+cursor: pointer;
+}
