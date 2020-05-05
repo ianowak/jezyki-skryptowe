@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+			<meta name="viewport" content="width=device-width">
+				<title>Sprawdź hasło</title>
+				<link rel="stylesheet" type="text/css" href="style2.css">
+					
+				</head>
+
+				<body>
+					<div id="strona">
+						<div id="baner">
+							<h1>
+								<a href="index.html">Weryfikacja jakości hasła</a>
+							</h1>
+						</div>
+						<div id="panelLewy">
+							<h2>Wybierz opcje</h2>
+							<ul>
+								<li>
+									<a href="sprawdz.html">Sprawdź hasło</a>
+								</li>
+								<li>
+									<a href="reguly.html">Reguły tworzenia hasła</a>
+								</li>
+							</ul>
+						</div>
+						<div id="panelPrawy">
+							<p>Wpisz hasło: 
+								<input type="password" id="sprawdzhaslo" />
+								<input type="button" value="Weryfikuj" onclick="haslo()"/>
+							</p>
+							<p id="pl"/>
+						</div>
+						<div id="stopka">
+							<h3>Wskaźnik jakości hasła</h3>
+							<p>Tworca strony: Inga Nowak</p>
+						</div>
+					</div>
+				</body>
+			<script>
+				function haslo(){
+	var x = sprawdzhaslo.value
+	if(x==""){
+		pl.style.color="red"
+		pl.innerHTML="HASŁO JEST PUSTE"
+	}
+	else if(x.search("[0-9]")>=0&&x.length>6){
+		pl.style.color="green"
+		pl.innerHTML="HASŁO JEST DOBRE"
+	}
+	else if(x.search("[0-9]")>=0&&x.length>=4&&x.length<=6){
+		pl.style.color="blue"
+		pl.innerHTML="HASŁO JEST ŚREDNIE"
+	}
+	else{
+		pl.style.color="yellow"
+		pl.innerHTML="HASŁO JEST SŁABE"
+	}
+}
+</script>
+			</html>
