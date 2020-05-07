@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formularz</title>
+</head>
+
+<body>
+	<div id="Strona">
+		<h1>Formularz</h1>
+		<form id="form">
+			imię <input type="text" id="imie"><br>
+			nazwisko <input type="text" id="nazwisko"><br>
+			e-mail <input type="text" id="email"><br>
+		</form>
+		<input type="button" id="button" value="Weryfikuj"  onclick="sprawdz()"/>
+		<p id="pl" />
+	</div>
+	<script type="text/javascript">
+	
+			
+			function sprawdz() {	
+				var imie = document.getElementById("imie");
+				var nazwisko = document.getElementById("nazwisko");
+				var email = document.getElementById("email");
+				var pl = document.getElementById("pl");
+				pl.innerHTML = "";
+				var znaki = /^[a-zA-ZąĄćĆęĘłŁńŃóÓśŚźŹżŻ]{3,}$/g;
+				var znaki2 = /^[a-zA-ZąĄćĆęĘłŁńŃóÓśŚźŹżŻ]{3,}$/g;
+				var znaki3 = /^[-\w\.]+@([-\w]+\.)+[a-z]+$/i;
+				
+				
+				if (znaki.test(imie.value)) {
+					pl.innerHTML += "imie poprawne<br>";
+				}
+				else{
+					pl.innerHTML += "imie nie jest poprawne<br>"
+				}
+				
+				if (znaki2.test(nazwisko.value)) {
+					pl.innerHTML += "nazwisko poprawne<br>";
+
+				}
+				else{
+					pl.innerHTML += "nazwisko nie jest poprawne<br>"
+				}			
+				
+				if (znaki3.test(email.value)) {
+					pl.innerHTML += "email poprawny<br>";
+				}
+				else{
+					pl.innerHTML += "email nie jest poprawny"
+				}
+				
+			}
+	</script>
+</body>
+</html>
