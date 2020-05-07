@@ -1,0 +1,40 @@
+#baner {
+	background-color:#08826A; height:60px; font-family:Verdana; text-align:center
+	}
+#panelLewy {
+	background-color:#1E9880; height:550px; width:30%; float:left
+	}
+#panelPrawy {
+	background-color:#9AC8BF; height:550px; width:70%; text-align:center; float:right
+	}
+#stopka {
+	background-color:#08826A;font-family:Verdana; color:white; text-align:right
+	}
+
+
+
+a{
+	color:white;
+}
+img{
+	height:450px; width:700px; margin:20px; padding:15px; border:2px; border-style:dotted; border-color:#1E9880;
+}
+
+table{
+	border-collapse:collapse; width:80%; 
+}
+th{
+	margin: 20px; padding: 15px; border:1px; border-style: solid; background-color:#1E9880;
+}
+
+td{
+	margin: 20px; padding: 15px; border:1px; border-style: solid; text-align:right;
+}
+
+td:hover{
+	background-color:green; color:white;
+}
+th:hover{
+	background-color:green; color:white;
+}
+
