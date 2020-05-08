@@ -7,8 +7,9 @@
 <body>
     <div id="strona">
         <h1>Sprawdź liczby</h1>
-        <p>Podaj 7 cyfr <input type="text" id="f1">
-            <input type="button" id="button" value="Weryfikuj"  /></p>
+        <p>Podaj 7 cyfr w ciagu <input type="text" id="f1">
+            <input type="button" id="button" value="Weryfikuj" onclick="najwieksza()" /></p>
+            <p id="funkcja1"></p>
         <p>Fibbonacci <input type="text" id="fib">
             <input type="button" id="button2" value="Weryfikuj"  /></p>
         <p> NWD <input type="text" id="nwd">
@@ -16,6 +17,26 @@
             
     </div>
     <script type="text/javascript">
+    
+        function najwieksza(){
+            var liczby = new Array(7);
+            liczby[0]=1;
+            var max=liczby[0];
+
+           for(var i=0;i<liczby.length;i++){
+                liczby[i]=f1.value[i];
+                
+               if(liczby[i]>max){
+                max=liczby[i];
+               }
+               
+               funkcja1.innerHTML="najwieksza cyfra: " + max;
+            
+           }
+           
+           
+        }
+        
 
     </script>
 
