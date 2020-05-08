@@ -13,9 +13,10 @@
         <p>Podaj numer ciagu Fibonacciego <input type="text" id="f2">
             <input type="button" id="button2" value="Weryfikuj" onclick="fibonacci()" /></p>
             <p id="funkcja2"></p>
-        <p> NWD <input type="text" id="f3">
-            <input type="button" id="button3" value="Weryfikuj" /></p>
-            <p id="funkcja3"></p>
+        <p> NWD liczba 1 <input type="text" id="nwd1"></p>
+        <p>NWD liczba 2 <input type="text" id="nwd2"></p>
+        <p><input type="button" id="button3" value="Weryfikuj" onclick="nwd()" /></p>    
+        <p id="funkcja3"> </p>
     </div>
     <script type="text/javascript">
     
@@ -58,7 +59,19 @@
             }
   
         }
-        
+
+        function nwd(){
+            var liczba1=parseInt(nwd1.value);
+            var liczba2=parseInt(nwd2.value);
+            var x;
+            
+            while(liczba2){
+                x=liczba1 % liczba2;
+                liczba1=liczba2;
+                liczba2=x;
+        }
+        funkcja3.innerHTML="najwiekszy wspolny dzielnik to: " + liczba1; 
+    }
     </script>
 
 </body>
