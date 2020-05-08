@@ -10,17 +10,18 @@
         <p>Podaj 7 cyfr w ciagu <input type="text" id="f1">
             <input type="button" id="button" value="Weryfikuj" onclick="najwieksza()" /></p>
             <p id="funkcja1"></p>
-        <p>Fibbonacci <input type="text" id="fib">
-            <input type="button" id="button2" value="Weryfikuj"  /></p>
-        <p> NWD <input type="text" id="nwd">
+        <p>Podaj numer ciagu Fibonacciego <input type="text" id="f2">
+            <input type="button" id="button2" value="Weryfikuj" onclick="fibonacci()" /></p>
+            <p id="funkcja2"></p>
+        <p> NWD <input type="text" id="f3">
             <input type="button" id="button3" value="Weryfikuj" /></p>
-            
+            <p id="funkcja3"></p>
     </div>
     <script type="text/javascript">
     
         function najwieksza(){
             var liczby = new Array(7);
-            liczby[0]=1;
+            liczby[0]=0;
             var max=liczby[0];
 
            for(var i=0;i<liczby.length;i++){
@@ -33,11 +34,31 @@
                funkcja1.innerHTML="najwieksza cyfra: " + max;
             
            }
-           
-           
+        }
+
+        function fibonacci(){
+            var fib=0;
+            fib=f2.value;
+            
+            if(fib<=1) funkcja2.innerHTML="wyraz nr "+ fib +" ciagu Fibonacciego to: "+fib;
+            else if(fib>1){
+                var a=1;
+                var b=1;
+                var c=1;
+
+                for(var i=0; i<fib-2;i++){
+                    a=b;
+                    b=c;
+                    c=a+b;
+   
+                }
+                var x=c;
+                funkcja2.innerHTML="wyraz "+ fib +" ciagu Fibonacciego to: "+x;
+                
+            }
+  
         }
         
-
     </script>
 
 </body>
