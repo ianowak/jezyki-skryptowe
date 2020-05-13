@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<style type="text/css">
+    #mapa {height: 600px;}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="mapa">
+    </div>
+    <script type="text/javascript">
+        var mymap = L.map('mapa').setView([54.445114, 18.55237], 16);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
+
+        L.marker([54.442377, 18.555894]).addTo(mymap)
+            .bindPopup("Wydział zarządzania").openPopup();
+    
+        L.marker([54.444997, 18.553587]).addTo(mymap)
+            .bindPopup("Centrum dydaktyczne").openPopup();
+        
+        L.marker([54.445011, 18.55487]).addTo(mymap)
+            .bindPopup("Wydział ekonomiczny").openPopup();
+
+            L.circle([54.44482, 18.557433], 40, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(mymap).bindPopup("Policja");
+
+        L.polygon([
+        [ 54.44512, 18.552505],
+            [54.445152, 18.552923],
+            [54.445039,18.552988],
+            [54.444977, 18.552534]
+        ]).addTo(mymap).bindPopup("Parking dla studentow");
+    
+        L.polygon([
+        [54.445409, 18.552422],
+            [54.445442, 18.552755],
+            [54.445368, 18.552829],
+            [54.445298, 18.552815],
+            [54.44526, 18.552452]
+        ]).addTo(mymap).bindPopup("Parking dla pracownikow");
+    
+        var popup = L.popup();
+    
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("Współrzędne geograficzne: " + e.latlng.toString())
+                .openOn(mymap);
+        }
+        mymap.on('click', onMapClick);
+    </script>
+       
+</body>
+
+</html>
